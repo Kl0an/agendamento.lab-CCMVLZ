@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParaLab - Página Inicial</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>ParaLab</h1>
+            <div class="user-settings">
+                <span id="user-name">Olá, Professor</span>
+                <a href="settings.html" class="settings-icon">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <ul>
+                <li class="active"><a href="home.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="select-class.html"><i class="fas fa-calendar-alt"></i> Agendar Laboratório</a></li>
+                <li><a href="my-schedules.html"><i class="fas fa-calendar-check"></i> Meus Agendamentos</a></li>
+                <li><a href="chat.html"><i class="fas fa-comments"></i> Chat</a></li>
+            </ul>
+        </nav>
+
+        <main class="home-container">
+            <div class="welcome-section">
+                <h2>Bem-vindo ao Sistema de Agendamento de Laboratórios</h2>
+                <p>Utilize o menu acima para navegar entre as funcionalidades do sistema.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Agendar Laboratório</h3>
+                        <p>Agende um laboratório para sua turma e matéria.</p>
+                        <a href="select-class.html" class="card-button">Agendar</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-list-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Meus Agendamentos</h3>
+                        <p>Visualize e gerencie seus agendamentos.</p>
+                        <a href="my-schedules.html" class="card-button">Visualizar</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Chat com Professores</h3>
+                        <p>Converse com outros professores e equipe pedagógica.</p>
+                        <a href="chat.html" class="card-button">Conversar</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Configurações</h3>
+                        <p>Gerencie suas turmas e preferências.</p>
+                        <a href="settings.html" class="card-button">Configurar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-schedules">
+                <h3>Agendamentos Recentes</h3>
+                <div class="schedules-list" id="recent-schedules-list">
+                    <!-- Os agendamentos recentes serão carregados dinamicamente via JavaScript -->
+                    <p class="empty-message">Nenhum agendamento recente encontrado.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="dashboard-footer">
+            <p>&copy; 2023 ParaLab - Sistema de Agendamento de Laboratórios</p>
+        </footer>
+    </div>
+
+    <script src="js/home.js"></script>
+</body>
+</html>

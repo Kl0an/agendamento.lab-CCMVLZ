@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Agendamentos - ParaLab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/my-schedules.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Navegação principal -->
+        <nav class="main-nav">
+            <div class="nav-logo">
+                <h1>ParaLab</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="select-class.html"><i class="fas fa-calendar-plus"></i> Agendar</a></li>
+                <li class="active"><a href="my-schedules.html"><i class="fas fa-calendar-check"></i> Meus Agendamentos</a></li>
+                <li><a href="chat.html"><i class="fas fa-comments"></i> Chat</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Configurações</a></li>
+            </ul>
+            <div class="user-info">
+                <span id="user-name">Olá, Professor</span>
+            </div>
+        </nav>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <div class="page-header">
+                <h2>Meus Agendamentos</h2>
+                <div class="filter-controls">
+                    <select id="filter-status">
+                        <option value="all">Todos</option>
+                        <option value="upcoming">Próximos</option>
+                        <option value="past">Passados</option>
+                    </select>
+                    <input type="date" id="filter-date" class="date-filter">
+                    <button id="clear-filters" class="secondary-button">Limpar Filtros</button>
+                </div>
+            </div>
+
+            <div class="schedules-container">
+                <div class="schedules-list" id="schedules-list">
+                    <!-- Os agendamentos serão carregados dinamicamente via JavaScript -->
+                    <div class="empty-schedules hidden">
+                        <i class="fas fa-calendar-times"></i>
+                        <p>Nenhum agendamento encontrado</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal de detalhes do agendamento -->
+            <div id="schedule-details-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3>Detalhes do Agendamento</h3>
+                    <div class="schedule-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Laboratório:</span>
+                            <span id="detail-lab" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Data:</span>
+                            <span id="detail-date" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Horário:</span>
+                            <span id="detail-time" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Turma:</span>
+                            <span id="detail-class" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Matéria:</span>
+                            <span id="detail-subject" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Status:</span>
+                            <span id="detail-status" class="detail-value"></span>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button id="cancel-schedule" class="danger-button">Cancelar Agendamento</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal de confirmação de cancelamento -->
+            <div id="cancel-confirm-modal" class="modal">
+                <div class="modal-content">
+                    <h3>Confirmar Cancelamento</h3>
+                    <p>Tem certeza que deseja cancelar este agendamento?</p>
+                    <div class="modal-actions">
+                        <button id="confirm-cancel" class="danger-button">Sim, Cancelar</button>
+                        <button id="cancel-cancel" class="secondary-button">Não, Manter</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/my-schedules.js"></script>
+</body>
+</html>

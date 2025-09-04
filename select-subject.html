@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParaLab - Seleção de Matéria</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>ParaLab</h1>
+            <div class="user-settings">
+                <a href="settings.html" class="settings-icon">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </div>
+        </header>
+
+        <main class="selection-container">
+            <h2>Selecione a Matéria</h2>
+            <p>Por favor, selecione a matéria para a qual deseja agendar um laboratório.</p>
+            
+            <div class="selection-grid" id="subject-grid">
+                <!-- As matérias serão carregadas dinamicamente via JavaScript -->
+            </div>
+
+            <div class="selection-actions">
+                <button id="back-button" class="secondary-button">Voltar</button>
+                <button id="view-labs" class="primary-button" disabled>Ver Salas Disponíveis</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/select-subject.js"></script>
+</body>
+</html>

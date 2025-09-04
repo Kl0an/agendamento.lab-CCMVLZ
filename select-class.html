@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParaLab - Seleção de Turma</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>ParaLab</h1>
+            <div class="user-settings">
+                <a href="settings.html" class="settings-icon">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </div>
+        </header>
+
+        <main class="selection-container">
+            <h2>Selecione sua Turma</h2>
+            <p>Por favor, selecione a turma para a qual deseja agendar um laboratório.</p>
+            
+            <div class="selection-grid" id="class-grid">
+                <!-- As turmas serão carregadas dinamicamente via JavaScript -->
+            </div>
+
+            <div class="selection-actions">
+                <button id="confirm-class" class="primary-button" disabled>Confirmar Seleção</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/select-class.js"></script>
+</body>
+</html>

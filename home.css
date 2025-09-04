@@ -1,0 +1,220 @@
+/* Home Page Styling */
+.home-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Main Navigation */
+.main-nav {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+}
+
+.main-nav li {
+    flex: 0 0 auto;
+}
+
+.main-nav a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: #555;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.main-nav a i {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.main-nav li.active a {
+    color: #1e88e5;
+    border-bottom: 3px solid #1e88e5;
+}
+
+.main-nav a:hover {
+    color: #1e88e5;
+    background-color: rgba(30, 136, 229, 0.05);
+}
+
+/* Welcome Section */
+.welcome-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.welcome-section h2 {
+    color: #0d47a1;
+    margin-bottom: 1rem;
+}
+
+.welcome-section p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    background: linear-gradient(to right, #0d47a1, #1e88e5);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-icon i {
+    font-size: 2.5rem;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    color: #0d47a1;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    min-height: 40px;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: #1e88e5;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #0d47a1;
+}
+
+/* Recent Schedules */
+.recent-schedules {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.recent-schedules h3 {
+    color: #0d47a1;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.schedules-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.schedule-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1rem;
+    border-left: 4px solid #1e88e5;
+}
+
+.schedule-item h4 {
+    color: #0d47a1;
+    margin-bottom: 0.5rem;
+}
+
+.schedule-item p {
+    margin: 0.3rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.schedule-item .schedule-date {
+    color: #1e88e5;
+    font-weight: 500;
+}
+
+.empty-message {
+    color: #999;
+    text-align: center;
+    padding: 2rem;
+    grid-column: 1 / -1;
+}
+
+/* Footer */
+.dashboard-footer {
+    background-color: #f5f5f5;
+    padding: 1.5rem;
+    text-align: center;
+    color: #666;
+    margin-top: auto;
+    border-top: 1px solid #eee;
+}
+
+/* User Name in Header */
+#user-name {
+    color: white;
+    margin-right: 1rem;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 0 1rem;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .welcome-section,
+    .recent-schedules {
+        padding: 1.5rem;
+    }
+    
+    .main-nav ul {
+        justify-content: flex-start;
+    }
+}

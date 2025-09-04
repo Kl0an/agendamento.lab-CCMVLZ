@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParaLab - Agendamento</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/schedule.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>ParaLab</h1>
+            <div class="user-settings">
+                <a href="settings.html" class="settings-icon">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </div>
+        </header>
+
+        <main class="schedule-container">
+            <div class="schedule-header">
+                <h2>Agendamento de Laboratório</h2>
+                <div class="schedule-info">
+                    <p id="class-info">Turma: <span>Carregando...</span></p>
+                    <p id="subject-info">Matéria: <span>Carregando...</span></p>
+                </div>
+            </div>
+
+            <div class="schedule-content">
+                <div class="labs-selection">
+                    <h3>Laboratórios Disponíveis</h3>
+                    <div class="selection-grid" id="labs-grid">
+                        <!-- Os laboratórios serão carregados dinamicamente via JavaScript -->
+                    </div>
+                </div>
+
+                <div class="time-slots">
+                    <h3>Horários Disponíveis</h3>
+                    <div class="time-slots-grid" id="time-slots-grid">
+                        <!-- Os horários serão carregados dinamicamente via JavaScript -->
+                    </div>
+                    <div id="professor-info" style="margin-top: 10px; font-weight: bold; color: #1e88e5;"></div>
+                </div>
+            </div>
+
+            <div class="schedule-summary" id="schedule-summary" style="display: none;">
+                <h3>Resumo do Agendamento</h3>
+                <div class="summary-content">
+                    <p><strong>Laboratório:</strong> <span id="summary-lab">-</span></p>
+                    <p><strong>Data:</strong> <span id="summary-date">-</span></p>
+                    <p><strong>Horário:</strong> <span id="summary-time">-</span></p>
+                    <p><strong>Turma:</strong> <span id="summary-class">-</span></p>
+                    <p><strong>Matéria:</strong> <span id="summary-subject">-</span></p>
+                </div>
+            </div>
+
+            <div class="schedule-actions">
+                <button id="back-button" class="secondary-button">Voltar</button>
+                <button id="schedule-button" class="primary-button" disabled>Agendar</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal de confirmação -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirmação de Agendamento</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Seu agendamento foi realizado com sucesso!</p>
+                <div class="confirmation-details">
+                    <p><strong>Laboratório:</strong> <span id="confirm-lab">-</span></p>
+                    <p><strong>Data:</strong> <span id="confirm-date">-</span></p>
+                    <p><strong>Horário:</strong> <span id="confirm-time">-</span></p>
+                    <p><strong>Turma:</strong> <span id="confirm-class">-</span></p>
+                    <p><strong>Matéria:</strong> <span id="confirm-subject">-</span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="go-to-home" class="primary-button">Ir para Página Inicial</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/schedule.js"></script>
+</body>
+</html>

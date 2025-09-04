@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParaLab - Configurações</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>ParaLab</h1>
+            <div class="user-settings">
+                <span id="user-name">Olá, Professor</span>
+                <a href="settings.html" class="settings-icon active">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Agendar Laboratório</a></li>
+                <li><a href="my-schedules.html"><i class="fas fa-list-alt"></i> Meus Agendamentos</a></li>
+                <li><a href="chat.html"><i class="fas fa-comments"></i> Chat</a></li>
+            </ul>
+        </nav>
+
+        <main class="settings-container">
+            <div class="settings-header">
+                <h2>Configurações</h2>
+                <p>Gerencie suas preferências e turmas</p>
+            </div>
+
+            <div class="settings-content">
+                <div class="settings-sidebar">
+                    <ul>
+                        <li class="active" data-tab="profile"><i class="fas fa-user"></i> Perfil</li>
+                        <li data-tab="classes"><i class="fas fa-users"></i> Minhas Turmas</li>
+                        <li data-tab="notifications"><i class="fas fa-bell"></i> Notificações</li>
+                        <li data-tab="security"><i class="fas fa-lock"></i> Segurança</li>
+                    </ul>
+                </div>
+
+                <div class="settings-main">
+                    <!-- Perfil -->
+                    <div class="settings-tab active" id="profile">
+                        <h3>Informações do Perfil</h3>
+                        <form id="profile-form">
+                            <div class="form-group">
+                                <label for="profile-name">Nome Completo</label>
+                                <input type="text" id="profile-name" placeholder="Seu nome completo">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-email">Email</label>
+                                <input type="email" id="profile-email" placeholder="Seu email" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-subject">Matéria Principal</label>
+                                <select id="profile-subject">
+                                    <option value="">Selecione uma matéria</option>
+                                    <option value="1">Língua Inglesa</option>
+                                    <option value="2">Programação Mobile</option>
+                                    <option value="3">Análise e Desenvolvimento de Sistemas</option>
+                                    <option value="4">Programação Front-end</option>
+                                    <option value="5">Programação Back-end</option>
+                                    <option value="6">Programação no Desenvolvimento de Sistemas</option>
+                                    <option value="7">Lógica Computacional</option>
+                                    <option value="8">Língua Portuguesa</option>
+                                    <option value="9">Matemática</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-bio">Biografia</label>
+                                <textarea id="profile-bio" placeholder="Conte um pouco sobre você"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="primary-button">Salvar Alterações</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Minhas Turmas -->
+                    <div class="settings-tab" id="classes">
+                        <h3>Gerenciar Turmas</h3>
+                        <p>Adicione ou remova turmas que você leciona.</p>
+                        
+                        <div class="classes-list" id="classes-list">
+                            <!-- As turmas serão carregadas dinamicamente via JavaScript -->
+                        </div>
+                        
+                        <div class="add-class-form">
+                            <h4>Adicionar Nova Turma</h4>
+                            <div class="form-group">
+                                <label for="new-class-name">Nome da Turma</label>
+                                <input type="text" id="new-class-name" placeholder="Ex: Turma A - Manhã">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-class-period">Período</label>
+                                <select id="new-class-period">
+                                    <option value="">Selecione um período</option>
+                                    <option value="morning">Manhã</option>
+                                    <option value="afternoon">Tarde</option>
+                                    <option value="evening">Noite</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button id="add-class-btn" class="primary-button">Adicionar Turma</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notificações -->
+                    <div class="settings-tab" id="notifications">
+                        <h3>Preferências de Notificação</h3>
+                        <p>Gerencie como você recebe notificações.</p>
+                        
+                        <div class="notification-options">
+                            <div class="notification-option">
+                                <div class="option-info">
+                                    <h4>Notificações por Email</h4>
+                                    <p>Receba emails sobre agendamentos e mensagens.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="email-notifications" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="notification-option">
+                                <div class="option-info">
+                                    <h4>Notificações de Agendamento</h4>
+                                    <p>Receba alertas sobre novos agendamentos e alterações.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="schedule-notifications" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="notification-option">
+                                <div class="option-info">
+                                    <h4>Notificações de Chat</h4>
+                                    <p>Receba alertas sobre novas mensagens.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="chat-notifications" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="notification-option">
+                                <div class="option-info">
+                                    <h4>Lembretes</h4>
+                                    <p>Receba lembretes sobre agendamentos próximos.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="reminder-notifications" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button id="save-notifications" class="primary-button">Salvar Preferências</button>
+                        </div>
+                    </div>
+
+                    <!-- Segurança -->
+                    <div class="settings-tab" id="security">
+                        <h3>Segurança da Conta</h3>
+                        <p>Gerencie a segurança da sua conta.</p>
+                        
+                        <form id="password-form">
+                            <div class="form-group">
+                                <label for="current-password">Senha Atual</label>
+                                <input type="password" id="current-password" placeholder="Digite sua senha atual">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">Nova Senha</label>
+                                <input type="password" id="new-password" placeholder="Digite sua nova senha">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirmar Nova Senha</label>
+                                <input type="password" id="confirm-password" placeholder="Confirme sua nova senha">
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="primary-button">Alterar Senha</button>
+                            </div>
+                        </form>
+                        
+                        <div class="logout-section">
+                            <h4>Sessão</h4>
+                            <p>Encerre sua sessão atual.</p>
+                            <button id="logout-btn" class="secondary-button">Sair da Conta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="dashboard-footer">
+            <p>&copy; 2023 ParaLab - Sistema de Agendamento de Laboratórios</p>
+        </footer>
+    </div>
+
+    <script src="js/settings.js"></script>
+</body>
+</html>

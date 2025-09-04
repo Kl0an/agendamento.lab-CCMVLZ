@@ -1,0 +1,107 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParaLab - Chat</title>
+    <h1>ParaLab</h1>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>ParaLab - Chat</h1>
+            <div class="user-settings">
+                <span id="user-name">Olá, Professor</span>
+                <a href="settings.html" class="settings-icon">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Agendar Laboratório</a></li>
+                <li><a href="my-schedules.html"><i class="fas fa-list-alt"></i> Meus Agendamentos</a></li>
+                <li class="active"><a href="chat.html"><i class="fas fa-comments"></i> Chat</a></li>
+            </ul>
+        </nav>
+
+        <main class="chat-container">
+            <div class="chat-sidebar">
+                <div class="chat-header">
+                    <h3>Conversas</h3>
+                    <button class="new-chat-btn"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar conversa..." id="search-chat">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="chat-list" id="chat-list">
+                    <!-- Conversas serão carregadas dinamicamente via JavaScript -->
+                </div>
+            </div>
+
+            <div class="chat-main">
+                <div class="chat-header-main">
+                    <div class="chat-user-info">
+                        <div class="chat-user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="chat-user-details">
+                            <h3 id="current-chat-name">Selecione uma conversa</h3>
+                            <p id="current-chat-status">Nenhuma conversa selecionada</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Mensagens serão carregadas dinamicamente via JavaScript -->
+                    <div class="empty-chat-message">
+                        
+                        <i class="fas fa-comments"></i>
+                        <p>Selecione uma conversa para começar a enviar mensagens</p>
+                    </div>
+                </div>
+
+                <div class="chat-input-container" id="chat-input-container" style="display: none;">
+                    <input type="text" placeholder="Digite sua mensagem..." id="chat-input">
+                    <button id="send-message-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="dashboard-footer">
+            <p>&copy; 2023 ParaLab - Sistema de Agendamento de Laboratórios</p>
+        </footer>
+    </div>
+
+    <!-- Modal para nova conversa -->
+    <div class="modal" id="new-chat-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Nova Conversa</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Selecione um professor para iniciar uma conversa:</p>
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar professor..." id="search-teacher">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="teachers-list" id="teachers-list">
+                    <!-- Lista de professores será carregada dinamicamente via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/chat.js"></script>
+</body>
+</html>
