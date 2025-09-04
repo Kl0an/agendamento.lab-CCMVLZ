@@ -1,6 +1,6 @@
-# Sistema de Agendamento de Laboratórios de Informática
+# ParaLab - Sistema de Agendamento de Laboratórios de Informática
 
-O sistema web desenvolvido para facilitar o agendamento de laboratórios de informática por professores e equipe pedagógica. O sistema permite que os usuários agendem salas de acordo com horários específicos, turmas e matérias, além de oferecer funcionalidades de comunicação entre professores e gerenciamento de configurações pessoais.
+O ParaLab é um sistema web desenvolvido para facilitar o agendamento de laboratórios de informática por professores e equipe pedagógica. O sistema permite que os usuários agendem salas de acordo com horários específicos, turmas e matérias, além de oferecer funcionalidades de comunicação entre professores e gerenciamento de configurações pessoais.
 
 ## Funcionalidades Principais
 
